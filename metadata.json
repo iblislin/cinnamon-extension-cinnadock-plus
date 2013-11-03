@@ -1,0 +1,13 @@
+{
+    "last-edited": "1374896994", 
+    "cinnamon-version": [
+        "1.8", 
+        "1.9", 
+        "2.0", 
+        "2.1"
+    ], 
+    "url": "http://cinnamon-spices.linuxmint.com/extensions", 
+    "uuid": "CinnaDockPlus@entelechy", 
+    "name": "CinnaDock Plus", 
+    "description": "Revamped CinnaDock with previews and native configuration and theming, for Cinnamon 1.8+"
+}
