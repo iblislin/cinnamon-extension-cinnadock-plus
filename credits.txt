@@ -1,4 +1,4 @@
-Copyright 2013 GPL
+Copyright 2014 GPL
 
 Authors:
 Entelechy - CinnaDock Plus

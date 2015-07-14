@@ -6,21 +6,15 @@ const Clutter = imports.gi.Clutter;
 const St = imports.gi.St;
 const Meta = imports.gi.Meta;
 const Main = imports.ui.main;
-const Mainloop = imports.mainloop;
 const DND = imports.ui.dnd;
 const PopupMenu = imports.ui.popupMenu;
 const Tweener = imports.ui.tweener;
+const Settings = imports.ui.settings;
 const Util = imports.misc.util;
 const Lang = imports.lang;
 const Signals = imports.signals;
+const Mainloop = imports.mainloop;
 
-var Settings = null;
-try {
-  Settings = imports.ui.settings;
-}
-catch(e)
-{
-}
 
 // Returns [x1,x2] so that the area between x1 and x2 is centered in length
 function center(length, naturalLength) {
@@ -803,9 +797,7 @@ function Dock()
 Dock.prototype = {
   _init: function() {
     this._tracker = Cinnamon.WindowTracker.get_default();
-    if (Settings) {
-      this.settings = new Settings.ExtensionSettings(this, UUID);
-    }
+    this.settings = new Settings.ExtensionSettings(this, UUID);
     // Load Settings
     this.position = this.settings.getValue("position");
     this.icon_size = this.settings.getValue("size");
@@ -1476,7 +1468,7 @@ DockPopupMenu.prototype = {
 
     this.isOpen = true;
 
-    this._boxPointer.setPosition(this.sourceActor, this._arrowAlignment);
+    this._boxPointer.setPosition(this.sourceActor, 0.5);
     this._boxPointer.show(animate);
 
     this.emit('open-state-changed', true);
